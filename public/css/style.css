@@ -1,0 +1,144 @@
+/* Dewan Mobile POS & ERP - Custom Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #059669;
+  --primary-dark: #047857;
+  --secondary: #0f172a;
+  --accent: #f59e0b;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  direction: ltr;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-urdu {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Tab active style */
+.nav-tab.active {
+  background-color: #ecfdf5;
+  color: #047857;
+  border-bottom: 2px solid #059669;
+}
+
+/* Category & button active states */
+.pos-cat-btn.active {
+  background-color: #059669 !important;
+  color: #ffffff !important;
+}
+
+.pos-pm-btn.active {
+  background-color: #059669 !important;
+  color: #ffffff !important;
+  border-color: #047857 !important;
+}
+
+.bank-srv-btn.active {
+  background-color: #dc2626 !important;
+  color: #ffffff !important;
+}
+
+.rep-btn.active {
+  background-color: #059669 !important;
+  color: #ffffff !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print styles for thermal paper (58mm / 80mm) */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  #printableReceiptArea, #printableReceiptArea * {
+    visibility: visible;
+  }
+  
+  #printableReceiptArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm !important;
+    max-width: 80mm !important;
+    margin: 0;
+    padding: 2mm !important;
+    font-size: 11px !important;
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Thermal receipt aesthetics on screen */
+.receipt-print-wrapper {
+  width: 76mm;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border: 1px dashed #cbd5e1;
+  padding: 14px;
+  background-color: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 4px 10px -1px rgb(0 0 0 / 0.12);
+  border-radius: 6px;
+  user-select: text;
+}
+
+/* Pulsing badge for active repairs */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .6; }
+}
+.pulse-badge {
+  animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Card hover animation */
+.hover-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.hover-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Glassmorphism subtle overlay */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+}

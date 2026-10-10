@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Live Database & Backups (CRITICAL: Do NOT overwrite during code updates)
+data/dewan_mobile_db.json
+data/backups/
+
+# Environment Variables & Logs
+.env
+*.log
+npm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
